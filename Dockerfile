@@ -21,6 +21,9 @@ RUN sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/googl
 RUN rm google-chrome.deb
 RUN mkdir /usr/src/app
 RUN mkdir /usr/src/app/output
+
+RUN useradd -u 1001 jenkins
+
 WORKDIR /usr/src/app
 
 ENV TZ=CET
